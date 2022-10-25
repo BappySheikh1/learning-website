@@ -6,6 +6,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import {AuthContext} from '../../Contexts/AuthProvider';
 import './Header.css'
+import {  FaUser } from 'react-icons/fa';
+import { Image } from 'react-bootstrap';
 
 const Header = () => {
  
@@ -27,6 +29,13 @@ const Header = () => {
             <Link to='/courses'>Courses</Link>
             <Link>FAQ</Link>
             <Link to='/blog'>Blog</Link>
+            <>
+            {
+              user?.photoURL ? <Image style={{height:'30px'}} roundedCircle src={user.photoURL}></Image>
+              :
+              <FaUser className='mt-1'/>
+            }
+            </>
           </Nav>
           
         </Navbar.Collapse>
