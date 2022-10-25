@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRouteError } from 'react-router-dom';
+import { Link, useRouteError } from 'react-router-dom';
 import './ErrorPage.css'
 
 const ErrorPage = () => {
@@ -15,6 +15,9 @@ const ErrorPage = () => {
                 </div>
             )
            }
+           <div>
+             <Link to='/'><h2>Go to home</h2></Link>
+           </div>
         </div>
     );
 };
