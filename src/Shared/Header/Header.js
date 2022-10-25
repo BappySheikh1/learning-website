@@ -31,7 +31,7 @@ const Header = () => {
             <Link to='/blog'>Blog</Link>
             <>
             {
-              user?.photoURL ? <Image style={{height:'30px'}} roundedCircle src={user.photoURL}></Image>
+              user?.photoURL ? <Image className='' style={{height:'30px'}} roundedCircle src={user.photoURL}></Image>
               :
               <FaUser className='mt-1'/>
             }
