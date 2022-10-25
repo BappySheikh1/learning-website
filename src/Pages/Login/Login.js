@@ -5,9 +5,11 @@ import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import {  FaGithub,FaGoogle } from 'react-icons/fa';
+import { useState } from 'react';
 
 
 const Login = () => {
+  const[error,setError]=useState('')
   const {googleAuth,loginUser}=useContext(AuthContext)
 
     const handleSubmit=(event)=>{
@@ -23,6 +25,7 @@ const Login = () => {
        })
        .catch(error =>{
         console.log(error);
+        setError(error.message)
        })
 
     }
@@ -35,6 +38,7 @@ const Login = () => {
       })
       .catch(error =>{
         console.log(error);
+        setError(error.message)
       })
     }
     const handleGithubPopUp=()=>{
@@ -54,6 +58,7 @@ const Login = () => {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" name='password' placeholder="Password" required/>
       </Form.Group>
+      <p className='text-danger'>{error}</p>
       <Button  variant="primary" type="submit">
         Log In
       </Button>

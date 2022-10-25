@@ -11,28 +11,24 @@ const Register = () => {
   const [accepted, setAccepted]=useState(false);
   const [error,setError]=useState('');
   const {createUser,updateUserProfile}=useContext(AuthContext)
-
+  
     const handleSubmit=(event)=>{
         event.preventDefault();
         const form=event.target
-        const fullName=form.name.value
+        const name=form.name.value
         const photoURL=form.photoURL.value
-       const email=form.email.value
-       const password=form.password.value
-      //  console.log( fullName,photoURL,email,password);
+        const email=form.email.value
+        const password=form.password.value
+       console.log( name,photoURL,email,password);
        createUser(email,password)
        .then(result =>{
-        const user=result.user
+        const user =result.user
         console.log(user);
-        form.reset()
-        setError('')
-        handleUserProfile(fullName,photoURL)
        })
-       .catch(error=>{
+       .catch(error =>{
         console.log(error);
         setError(error.message)
        })
- 
      }
 
      const handleUserProfile=(name,photo)=>{

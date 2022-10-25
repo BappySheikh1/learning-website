@@ -11,8 +11,16 @@ import { Image } from 'react-bootstrap';
 
 const Header = () => {
  
-    const {user}=useContext(AuthContext)
-    
+    const {user,logOut}=useContext(AuthContext)
+    const handleUserLogOut=()=>{
+      logOut()
+      .then(()=>{
+
+      })
+      .catch(error =>{
+        console.log(error);
+      })
+    }
 
     return (
         <div>
@@ -29,6 +37,7 @@ const Header = () => {
             <Link to='/courses'>Courses</Link>
             <Link>FAQ</Link>
             <Link to='/blog'>Blog</Link>
+            {user?.uid && <Link onClick={handleUserLogOut} className='mx-2'>Log Out</Link>}
             <>
             {
               user?.photoURL ? <Image className='' style={{height:'30px'}} roundedCircle src={user.photoURL}></Image>

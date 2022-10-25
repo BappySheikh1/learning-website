@@ -3,6 +3,7 @@ import Main from '../Layout/Main';
 import Blog from "../Pages/Blog/Blog";
 import Courses from "../Pages/Courses/Courses";
 import ErrorPage from '../Pages/ErrorPage/ErrorPage'
+import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 
@@ -14,7 +15,7 @@ export const router =createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:<div>This IS a Home</div>
+                element:<Home />
             },
             {
              path:'/courses',
