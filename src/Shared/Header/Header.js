@@ -26,7 +26,7 @@ const Header = () => {
         <div>
             <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">MaxCoach </Navbar.Brand>
+        <Link className='navbar-container' to='/'>MaxCoach </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -35,7 +35,7 @@ const Header = () => {
             navbarScroll
           >
             <Link to='/courses'>Courses</Link>
-            <Link>FAQ</Link>
+            <Link to='/faq'>FAQ</Link>
             <Link to='/blog'>Blog</Link>
             {user?.uid && <Link onClick={handleUserLogOut} className='mx-2'>Log Out</Link>}
             <>
