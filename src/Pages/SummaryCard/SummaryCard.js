@@ -4,12 +4,18 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
 import { FaDownload,FaCartPlus, FaStar, FaEye ,FaCrown} from 'react-icons/fa';
+import { Col, Container, Row } from 'react-bootstrap';
+import LeftSideNav from '../../Shared/LeftSideNav/LeftSideNav';
+
 
 const SummaryCard = ({ct}) => {
     // console.log(ct);
     const {title,description,image,id,author,rating}=ct
     return (
         <div>
+          <Container>
+            <Row>
+              <Col lg='9'>
             <Card id='cartSummaryDetails' className="mx-auto my-4 ">
       <Card.Header className='d-flex justify-content-between align-items-center'>
         <div className='d-flex align-items-center'>
@@ -55,7 +61,13 @@ const SummaryCard = ({ct}) => {
          <span>{rating?.count}</span>
         </div>
       </Card.Footer>
-    </Card>
+            </Card>
+            </Col>
+            <Col className='d-none d-lg-block' lg='3'>
+              <LeftSideNav />
+            </Col>
+            </Row>
+            </Container>
         </div>
     );
 };
