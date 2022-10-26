@@ -2,12 +2,12 @@ import React from 'react';
 import './FaqPAge.css';
 import logo from '../../assets/faq-632c0874710c1-sej-760x400.png';
 import Image from 'react-bootstrap/Image'
-
+ 
 const FaqPAge = () => {
     return (
         <div>
-            <div >
-            <Image className='mx-auto w-100' fluid src={logo}></Image>
+            <div className='' >
+            <Image fluid src={logo}></Image>
             </div>
             <div className='my-2 border rounded p-3 FAQ-container'>
                 <h2>Why An FAQ Resource?</h2>

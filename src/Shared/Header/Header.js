@@ -9,7 +9,6 @@ import './Header.css'
 import {  FaUser } from 'react-icons/fa';
 import { Image } from 'react-bootstrap';
 import { useState } from 'react';
-import Switch from "react-switch";
 import ReactSwitch from 'react-switch';
 
 const Header = () => {
@@ -30,7 +29,7 @@ const Header = () => {
     }
     return (
         <div>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" expand="lg" className='py-3'>
       <Container fluid>
         <Link className='navbar-container' to='/'>MaxCoach </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
