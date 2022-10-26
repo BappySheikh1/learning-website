@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import {AuthContext} from '../../Contexts/AuthProvider';
 import './Header.css'
 import {  FaUser } from 'react-icons/fa';
-import { Image } from 'react-bootstrap';
+import { Image, Tooltip } from 'react-bootstrap';
 import { useState } from 'react';
 import ReactSwitch from 'react-switch';
 
