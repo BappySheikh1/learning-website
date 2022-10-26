@@ -38,7 +38,11 @@ const SummaryCard = ({ct}) => {
         description
        }
         </Card.Text>
+        <div className='d-flex justify-content-between'>
         <Link to='/courses'><Button variant="primary">Go To Courses</Button></Link>
+        <br />
+        <Link to='/checkout'><Button variant="primary" className='btn btn-outline-light'>Get premium access  </Button></Link>
+        </div>
       </Card.Body>
 
       <Card.Footer className="d-flex justify-content-between px-5 p-3"> 

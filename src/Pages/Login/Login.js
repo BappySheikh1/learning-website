@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link, useNavigate  } from 'react-router-dom';
+import { Link, useLocation, useNavigate  } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import {  FaGithub,FaGoogle } from 'react-icons/fa';
 import { useState } from 'react';
@@ -11,6 +11,9 @@ import { useState } from 'react';
 const Login = () => {
   const[error,setError]=useState('')
   const navigate=useNavigate()
+  const location=useLocation()
+  let from = location.state?.from?.pathname || "/";
+
   const {googleAuth,loginUser,gitHubAuth}=useContext(AuthContext)
   
     const handleSubmit=(event)=>{
@@ -23,7 +26,7 @@ const Login = () => {
        .then(result =>{
         const user =result.user
         console.log(user);
-        navigate('/')
+        navigate(from,{ replace: true })
        })
        .catch(error =>{
         console.log(error);
@@ -78,6 +81,10 @@ const Login = () => {
         <button className='btn btn-outline-primary' onClick={handleGooglePopUp}><FaGoogle /> Google Sing in</button>
         <br />
         <button onClick={handleGithubPopUp} className='btn btn-outline-dark mt-1'><FaGithub /> Github Sign in</button>
+       </div>
+
+       <div>
+        
        </div>
         </div>
 
