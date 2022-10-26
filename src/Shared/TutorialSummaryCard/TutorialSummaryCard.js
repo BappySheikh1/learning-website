@@ -6,7 +6,7 @@ import { FaUserAlt,FaCartPlus } from 'react-icons/fa';
 
 const TutorialSummaryCard = ({allTutorial}) => {
     const {description,image,rating,title,category_id,author}=allTutorial
-    console.log(allTutorial);
+    // console.log(allTutorial);
     return (
         <div>
        <Card className=" mt-2 mx-auto ">

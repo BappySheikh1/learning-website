@@ -3,10 +3,10 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image';
-import { FaDownload,FaCartPlus, FaStar, FaEye } from 'react-icons/fa';
+import { FaDownload,FaCartPlus, FaStar, FaEye ,FaCrown} from 'react-icons/fa';
 
 const SummaryCard = ({ct}) => {
-    console.log(ct);
+    // console.log(ct);
     const {title,description,image,id,author,rating}=ct
     return (
         <div>
@@ -41,7 +41,7 @@ const SummaryCard = ({ct}) => {
         <div className='d-flex justify-content-between'>
         <Link to='/courses'><Button variant="primary">Go To Courses</Button></Link>
         <br />
-        <Link to='/checkout'><Button variant="primary" className='btn btn-outline-light'>Get premium access  </Button></Link>
+        <Link to='/checkout'><Button variant="primary" className='btn btn-outline-light '>Get premium access  <FaCrown className='text-warning ' /></Button></Link>
         </div>
       </Card.Body>
 

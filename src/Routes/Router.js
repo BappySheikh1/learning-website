@@ -9,7 +9,6 @@ import Home from "../Pages/Home/Home";
 import LeftSideNavDetails from "../Pages/LeftSideNav/LeftSideNavDetails";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
-import CardDetails from "../Shared/CardDetails/CardDetails";
 import PrivateRoute from "./PrivateRoute";
 
 
@@ -44,11 +43,11 @@ export const router =createBrowserRouter([
                 path:'/faq',
                 element:<FaqPAge></FaqPAge>
             },
-            {
-                path:'/courses/:id',
-                loader: ({params})=>fetch(`http://localhost:5000/tutorial/${params.id}`),
-                element:<CardDetails />
-            },
+            // {
+            //     path:'/courses/:id',
+            //     loader: ({params})=>fetch(`http://localhost:5000/tutorial/${params.id}`),
+            //     element:<CardDetails />
+            // },
             {
                 path:'/category/:id',
                 loader:({params})=>fetch(`http://localhost:5000/category/${params.id}`),

@@ -15,6 +15,7 @@ const AuthProvider = ({children}) => {
     const [loadding,setLoadding]=useState(true)
 
     const createUser=(email,password)=>{
+        setLoadding(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
@@ -26,10 +27,12 @@ const AuthProvider = ({children}) => {
     }
 
     const loginUser=(email,password)=>{
+        setLoadding(true)
         return signInWithEmailAndPassword(auth,email,password)
     }
     
     const logOut=()=>{
+        setLoadding(true)
         return signOut(auth)
     }
  

@@ -59,7 +59,7 @@ const Header = () => {
             }
             <>
             {
-              user?.photoURL ? <Image title={user?.displayName} className='' style={{height:'30px'}} roundedCircle src={user?.photoURL}></Image>
+              user?.photoURL ? <Image title={user?.displayName} className='user-image' style={{height:'30px'}} roundedCircle src={user?.photoURL}></Image>
               :
               <FaUser className='mt-1'/>
             }

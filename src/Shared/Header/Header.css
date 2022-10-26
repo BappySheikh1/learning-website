@@ -5,6 +5,9 @@
     font-weight: 600;
     padding-left: 20px;
 }
+.user-image{
+    cursor: pointer;
+}
 .header-container a{
  text-decoration: none;
  margin-right: 10px;
