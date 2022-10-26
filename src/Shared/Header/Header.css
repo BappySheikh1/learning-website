@@ -16,3 +16,15 @@
 .header-container a:hover{
     color: orangered;
 }
+
+.react-switch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#light .switch label{
+    color: white;
+}
+#dark .switch label{
+    color: black;
+}

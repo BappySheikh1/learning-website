@@ -8,9 +8,12 @@ import {AuthContext} from '../../Contexts/AuthProvider';
 import './Header.css'
 import {  FaUser } from 'react-icons/fa';
 import { Image } from 'react-bootstrap';
+import { useState } from 'react';
+import Switch from "react-switch";
+import ReactSwitch from 'react-switch';
 
 const Header = () => {
- 
+   const [theme,setTheme]=useState(null)
     const {user,logOut}=useContext(AuthContext)
     const handleUserLogOut=()=>{
       logOut()
@@ -22,13 +25,23 @@ const Header = () => {
       })
     }
 
+    const toggleTheme=()=>{
+      setTheme((curr)=>(curr === "light" ? "dark" : "light"))
+    }
     return (
         <div>
             <Navbar bg="light" expand="lg">
       <Container fluid>
         <Link className='navbar-container' to='/'>MaxCoach </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
+
+        <span className='ms-5 react-switch'>
+          <label>{theme === "light" ? "Light Mode" : "Dark Mode"}</label>
+          <ReactSwitch onChange={toggleTheme} checked={theme === "dark" }/>
+          </span>
+
         <Navbar.Collapse id="navbarScroll">
+
           <Nav
             className="ms-auto my-2 my-lg-0 pe-3 header-container"
             style={{ maxHeight: '100px' }}
