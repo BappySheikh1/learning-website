@@ -1,0 +1,20 @@
+.courses-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+.summary-card img{
+    height: 350px;
+}
+.icons-react{
+    margin-right: 5px;
+}
+
+@media screen and (max-width:800px) {
+    .courses-container{
+        display: grid;
+        grid-template-columns:  1fr;
+        
+    }
+    
+}

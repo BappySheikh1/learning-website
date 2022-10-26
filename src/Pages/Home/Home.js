@@ -12,7 +12,7 @@ const Home = () => {
              <h3> 
               Dear students, there is free programming <br />
               tutorial for you, please visit our course page <br />
-              and learn about programming  </h3>
+              and learn about programming Articles </h3>
               <div>
                 <Link to='/courses'>
                     <button className="btn btn-success py-2 fw-semibold text-light">Courses page <FaArrowCircleRight />
