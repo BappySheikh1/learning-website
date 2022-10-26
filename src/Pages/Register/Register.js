@@ -24,6 +24,8 @@ const Register = () => {
        .then(result =>{
         const user =result.user
         console.log(user);
+        handleUserProfile(name,photoURL)
+        form.reset();
        })
        .catch(error =>{
         console.log(error);
@@ -31,8 +33,8 @@ const Register = () => {
        })
      }
 
-     const handleUserProfile=(name,photo)=>{
-      updateUserProfile(name,photo)
+     const handleUserProfile=(name,photoURL)=>{
+      updateUserProfile(name,photoURL)
       .then(() =>{
         
       })
