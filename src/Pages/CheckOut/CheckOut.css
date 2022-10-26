@@ -1,0 +1,9 @@
+.checkout-container{
+    width: 350px;
+    height: 200px;
+    background-color: rgb(236, 235, 232);
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
