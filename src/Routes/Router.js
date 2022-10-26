@@ -24,7 +24,7 @@ export const router =createBrowserRouter([
             },
             {
              path:'/courses',
-             loader:()=>fetch('http://localhost:5000/turorial/All'),
+             loader:()=>fetch('https://learning-website-server-nu.vercel.app/turorial/All'),
              element: <Courses />
             },
             {
@@ -44,13 +44,13 @@ export const router =createBrowserRouter([
                 element:<FaqPAge></FaqPAge>
             },
             // {
-            //     path:'/courses/:id',
+            //      path:'/courses/:id',
             //     loader: ({params})=>fetch(`http://localhost:5000/tutorial/${params.id}`),
             //     element:<CardDetails />
             // },
             {
                 path:'/category/:id',
-                loader:({params})=>fetch(`http://localhost:5000/category/${params.id}`),
+                loader:({params})=>fetch(`https://learning-website-server-bappysheikh1.vercel.app/category/${params.id}`),
                 element: <LeftSideNavDetails />
             },
             {
