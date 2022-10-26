@@ -29,18 +29,18 @@ const Header = () => {
     }
     return (
         <div>
-            <Navbar bg="light" expand="lg" className='py-3'>
+            <Navbar bg="light"  expand="lg" className='py-3'>
       <Container fluid>
         <Link className='navbar-container' to='/'>MaxCoach </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
 
+       
+
+        <Navbar.Collapse id="navbarScroll">
         <span className='ms-5 react-switch'>
           <label>{theme === "light" ? "Light Mode" : "Dark Mode"}</label>
           <ReactSwitch onChange={toggleTheme} checked={theme === "dark" }/>
           </span>
-
-        <Navbar.Collapse id="navbarScroll">
-
           <Nav
             className="ms-auto my-2 my-lg-0 pe-3 header-container"
             style={{ maxHeight: '100px' }}
