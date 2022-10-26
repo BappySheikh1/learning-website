@@ -10,7 +10,7 @@ const SummaryCard = ({ct}) => {
     const {title,description,image,id,author,rating}=ct
     return (
         <div>
-            <Card style={{width:'70%'}} className="mx-auto my-4">
+            <Card id='cartSummaryDetails' className="mx-auto my-4 ">
       <Card.Header className='d-flex justify-content-between align-items-center'>
         <div className='d-flex align-items-center'>
           <div>

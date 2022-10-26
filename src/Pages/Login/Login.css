@@ -1,0 +1,39 @@
+ .register-main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(216, 224, 228);
+    height: 850px;
+ }
+ #register-container{
+    width: 40%;
+    background-color:  rgb(17, 224, 17);
+    
+ }
+ .details-content h3 {
+  color: gray;
+ }
+ .details-content h1{
+    font-size: 60px;
+    color: rgb(17, 224, 17);
+    font-weight: bolder;
+ }
+ .items{
+    color: gray;
+    font-size: 60px;
+ }
+ .details-content p{
+    color: gray;
+ }
+ @media screen and (max-width:700px) {
+    .register-main{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    #register-container{
+        width: 80%;
+        background-color:  rgb(17, 224, 17);
+        margin-bottom: 40px;
+     }
+ }

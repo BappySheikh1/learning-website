@@ -1,3 +1,6 @@
+#cartSummaryDetails{
+    width: 70%;
+}
 
 @media screen and (max-width:992px) {
     .category-item{
@@ -5,4 +8,9 @@
         grid-template-columns: repeat(2,1fr);
         
     }
+    #cartSummaryDetails{
+        width: 100%;
+        
+    }
+
 }

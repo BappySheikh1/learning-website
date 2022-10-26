@@ -6,8 +6,9 @@ import { Link, useLocation, useNavigate  } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import {  FaGithub,FaGoogle } from 'react-icons/fa';
 import { useState } from 'react';
+import './Login.css'
 
-
+ 
 const Login = () => {
   const[error,setError]=useState('')
   const navigate=useNavigate()
@@ -59,7 +60,7 @@ const Login = () => {
 
     return (
       <div>
-        <div className='w-50 border p-4 mx-auto mt-5 rounded'>
+        <div className='w-50 border bg-info p-4 mx-auto mt-5 rounded'>
              <Form onSubmit={handleSubmit} className='w-75'>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -74,7 +75,7 @@ const Login = () => {
       <Button  variant="primary" type="submit">
         Log In
       </Button>
-      <p>You have no account <Link to='/register'>Please Register</Link> </p>
+      <p className='text-dark'>You have no account <Link to='/register'>Please Register</Link> </p>
     </Form>
         </div>
        <div className='text-center my-4'>

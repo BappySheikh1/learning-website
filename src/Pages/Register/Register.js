@@ -32,7 +32,7 @@ const Register = () => {
         setError(error.message)
        })
      }
-
+ 
      const handleUserProfile=(name,photoURL)=>{
       updateUserProfile(name,photoURL)
       .then(() =>{
@@ -48,7 +48,8 @@ const Register = () => {
      }
 
     return (
-        <div  className='w-50 border p-4 mx-auto mt-5 rounded'>
+      <div className='register-main '>
+        <div id='register-container'  className=' border p-4  mt-5 rounded'>
             <Form onSubmit={handleSubmit} className='w-75'>
       <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label>Email address</Form.Label>
@@ -81,8 +82,20 @@ const Register = () => {
            <Button variant="primary" type="submit" disabled={!accepted}>
             Register
           </Button>
-          <p>you have an already account <Link to='/login'>go login </Link></p>
          </Form>
+        </div>
+        {/* detail side */}
+        <div className='details-content text-center'>
+          <h3>Let's make it <br />
+          happen togather!
+          </h3>
+          <p>To stay connected with us <br />
+            please login with your personal info
+          </p>
+          <h1>CO<span className='items'>.</span></h1>
+          <p>Already have an  account <Link to='/login'>Log In </Link></p>
+        </div>
+
         </div>
     );
 };
