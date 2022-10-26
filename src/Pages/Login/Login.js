@@ -11,7 +11,7 @@ import { useState } from 'react';
 const Login = () => {
   const[error,setError]=useState('')
   const navigate=useNavigate()
-  const {googleAuth,loginUser}=useContext(AuthContext)
+  const {googleAuth,loginUser,gitHubAuth}=useContext(AuthContext)
   
     const handleSubmit=(event)=>{
        event.preventDefault();
@@ -44,7 +44,14 @@ const Login = () => {
       })
     }
     const handleGithubPopUp=()=>{
-
+      gitHubAuth()
+      .then(result =>{
+        const user=result.user
+        console.log(user);
+      })
+      .catch(error =>{
+        console.log(error);
+      })
     }
 
     return (
