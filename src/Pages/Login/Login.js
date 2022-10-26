@@ -59,8 +59,9 @@ const Login = () => {
     }
 
     return (
-      <div>
-        <div className='w-50 border bg-info p-4 mx-auto mt-5 rounded'>
+      <div className='login-main'>
+        
+        <div id='login-content' className=' border  p-4 mt-5 rounded'>
              <Form onSubmit={handleSubmit} className='w-75'>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -72,21 +73,27 @@ const Login = () => {
         <Form.Control type="password" name='password' placeholder="Password" required/>
       </Form.Group>
       <p className='text-danger'>{error}</p>
-      <Button  variant="primary" type="submit">
+      <Button className='w-50 fw-bold'  variant="primary" type="submit">
         Log In
       </Button>
-      <p className='text-dark'>You have no account <Link to='/register'>Please Register</Link> </p>
     </Form>
+    <div className='text-center my-4'>
+        <button className='btn btn-primary' onClick={handleGooglePopUp}><FaGoogle /> Google Sing in</button>
+         <span className='text-danger fw-bold'>  OR </span>
+        <button onClick={handleGithubPopUp} className='btn btn-dark '><FaGithub /> Github Sign in</button>
+       </div>
         </div>
-       <div className='text-center my-4'>
-        <button className='btn btn-outline-primary' onClick={handleGooglePopUp}><FaGoogle /> Google Sing in</button>
-        <br />
-        <button onClick={handleGithubPopUp} className='btn btn-outline-dark mt-1'><FaGithub /> Github Sign in</button>
+       
+       
+       <div className='details-content text-center'>
+        <h3>Please Log In</h3>
+        <p>To stay connected with us <br />
+            please login with your personal info
+          </p>
+        <h1>CO<span className='items'>.</span></h1>
+        <p className='text-dark'>You have no account <Link to='/register'>Please Register</Link> </p>
        </div>
 
-       <div>
-        
-       </div>
         </div>
 
     );

@@ -1,3 +1,19 @@
+ /* Log in css start */
+ .login-main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 850px;
+    background-color: rgb(223, 195, 250);
+ }
+ #login-content{
+    width: 40%;
+    background-color: rgb(150, 72, 228);
+    color: white;
+ }
+ /* Log in css end */
+ 
+ /* Register css start */
  .register-main{
     display: flex;
     justify-content: space-around;
@@ -25,7 +41,18 @@
  .details-content p{
     color: gray;
  }
+  /* Register css end*/
  @media screen and (max-width:700px) {
+     /* Log in css start */
+    .login-main{
+     display: flex;
+     flex-direction: column;
+    }
+     #login-content{
+    width: 80%;
+ }
+ /* Log in css end */
+ /* register start */
     .register-main{
         display: flex;
         flex-direction: column;

@@ -79,7 +79,7 @@ const Register = () => {
              {error}
             </Form.Text>
             <br />
-           <Button variant="primary" type="submit" disabled={!accepted}>
+           <Button className='w-50 fw-bold' variant="primary" type="submit" disabled={!accepted}>
             Register
           </Button>
          </Form>
@@ -90,7 +90,7 @@ const Register = () => {
           happen togather!
           </h3>
           <p>To stay connected with us <br />
-            please login with your personal info
+            please Registered with your personal info
           </p>
           <h1>CO<span className='items'>.</span></h1>
           <p>Already have an  account <Link to='/login'>Log In </Link></p>
