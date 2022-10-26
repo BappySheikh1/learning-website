@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import {  FaGithub,FaGoogle } from 'react-icons/fa';
 import { useState } from 'react';
@@ -10,8 +10,9 @@ import { useState } from 'react';
 
 const Login = () => {
   const[error,setError]=useState('')
+  const navigate=useNavigate()
   const {googleAuth,loginUser}=useContext(AuthContext)
-
+  
     const handleSubmit=(event)=>{
        event.preventDefault();
        const form=event.target
@@ -22,6 +23,7 @@ const Login = () => {
        .then(result =>{
         const user =result.user
         console.log(user);
+        navigate('/')
        })
        .catch(error =>{
         console.log(error);

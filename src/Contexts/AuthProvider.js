@@ -14,7 +14,7 @@ const AuthProvider = ({children}) => {
    
 
     const createUser=(email,password)=>{
-        return createUserWithEmailAndPassword(email,password)
+        return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const updateUserProfile=(name,photo)=>{
@@ -31,7 +31,7 @@ const AuthProvider = ({children}) => {
     const logOut=()=>{
         return signOut(auth)
     }
-
+ 
     const googleProvider= new GoogleAuthProvider()
     const googleAuth=()=>{
         return signInWithPopup(auth,googleProvider)

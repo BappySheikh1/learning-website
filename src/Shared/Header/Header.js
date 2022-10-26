@@ -37,7 +37,14 @@ const Header = () => {
             <Link to='/courses'>Courses</Link>
             <Link to='/faq'>FAQ</Link>
             <Link to='/blog'>Blog</Link>
-            {user?.uid && <Link onClick={handleUserLogOut} className='mx-2'>Log Out</Link>}
+            {user?.uid ? 
+            <Link onClick={handleUserLogOut} className='mx-2'>Log Out</Link>
+            :
+            <>
+            <Link to='login'>Log in</Link>
+            <Link to='/register'>Register</Link>
+            </>
+            }
             <>
             {
               user?.photoURL ? <Image className='' style={{height:'30px'}} roundedCircle src={user.photoURL}></Image>
