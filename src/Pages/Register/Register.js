@@ -4,13 +4,14 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../../Contexts/AuthProvider';
 
 
 const Register = () => {
   const [accepted, setAccepted]=useState(false);
   const [error,setError]=useState('');
-  const {createUser,updateUserProfile}=useContext(AuthContext)
+  const {createUser,updateUserProfile,emailvarify}=useContext(AuthContext)
   
     const handleSubmit=(event)=>{
         event.preventDefault();
@@ -20,12 +21,29 @@ const Register = () => {
         const email=form.email.value
         const password=form.password.value
        console.log( name,photoURL,email,password);
+       
+       if (!/(?=.{8,})/.test(password)) {
+        setError("password must be 8 character");
+        return;
+      }
+  
+      if (!/(?=.*[a-zA-Z])/.test(password)) {
+        setError("password should have Upper letter!!");
+        return;
+      }
+      if (!/(?=.*[!#@$%&? "])/.test(password)) {
+        setError("password should have special character!!");
+        return;
+      }
+  
+
        createUser(email,password)
        .then(result =>{
         const user =result.user
         console.log(user);
         handleUserProfile(name,photoURL)
         form.reset();
+        handleEmailveification();
        })
        .catch(error =>{
         console.log(error);
@@ -34,7 +52,11 @@ const Register = () => {
      }
  
      const handleUserProfile=(name,photoURL)=>{
-      updateUserProfile(name,photoURL)
+      const profile={
+        displayName:name,
+        photoURL: photoURL
+    }
+      updateUserProfile(profile)
       .then(() =>{
         
       })
@@ -46,6 +68,18 @@ const Register = () => {
      const handletermsAndCondition=(event)=>{
       setAccepted(event.target.checked)
      }
+    
+    //  Verification email
+    const handleEmailveification =()=>{
+      emailvarify()
+      .then(()=>{
+       toast.success('please check your email &  verify your email address ')
+      })
+      .catch(error=>{
+          console.log(error);
+          setError(error.message)
+      }) 
+  }
 
     return (
       <div className='register-main '>
@@ -95,7 +129,7 @@ const Register = () => {
           <h1>CO<span className='items'>.</span></h1>
           <p>Already have an  account <Link to='/login'>Log In </Link></p>
         </div>
-
+ 
         </div>
     );
 };

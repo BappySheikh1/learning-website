@@ -11,7 +11,7 @@ import { Image  } from 'react-bootstrap';
 import { useState } from 'react';
 import ReactSwitch from 'react-switch';
 import {  toast } from 'react-toastify';
- 
+  
 const Header = () => {
    const [theme,setTheme]=useState(null)
     const {user,logOut}=useContext(AuthContext)
@@ -60,7 +60,7 @@ const Header = () => {
             }
             <>
             {
-              user?.photoURL ? <Image title={user?.displayName} className='user-image' style={{height:'30px'}} roundedCircle src={user?.photoURL}></Image>
+              user?.photoURL ? <span data-bs-toggle="tooltip" data-bs-placement="bottom" title={user?.displayName}> <Image   className='user-image' style={{height:'30px'}} roundedCircle src={user?.photoURL}></Image> </span>
               :
               <FaUser className='mt-1'/>
             }

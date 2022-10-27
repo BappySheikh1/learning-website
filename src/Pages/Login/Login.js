@@ -7,6 +7,7 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 import {  FaGithub,FaGoogle } from 'react-icons/fa';
 import { useState } from 'react';
 import './Login.css'
+import { toast } from 'react-toastify';
 
  
 const Login = () => {
@@ -15,7 +16,7 @@ const Login = () => {
   const location=useLocation()
   let from = location?.state?.from?.pathname || "/";
 
-  const {googleAuth,loginUser,gitHubAuth}=useContext(AuthContext)
+  const {googleAuth,loginUser,gitHubAuth,user,emailResetPassword}=useContext(AuthContext)
   
     const handleSubmit=(event)=>{
        event.preventDefault();
@@ -27,7 +28,12 @@ const Login = () => {
        .then(result =>{
         const user =result.user
         console.log(user);
-        navigate(from,{ replace: true })
+        if(user?.emailVerified){
+          navigate(from,{ replace: true })
+        }else{
+          toast.error('your email in not verifyed')
+        }
+        
        })
        .catch(error =>{
         console.log(error);
@@ -35,7 +41,7 @@ const Login = () => {
        })
 
     }
-
+    //  handleGooglePopUp
     const handleGooglePopUp=()=>{
       googleAuth()
       .then(result =>{
@@ -48,6 +54,7 @@ const Login = () => {
         setError(error.message)
       })
     }
+    // handleGitHubpopUp
     const handleGithubPopUp=()=>{
       gitHubAuth()
       .then(result =>{
@@ -57,6 +64,22 @@ const Login = () => {
       })
       .catch(error =>{
         console.log(error);
+      })
+    }
+   
+    // emailforget
+    const handleOnBlur=()=>{
+      
+    }
+    // handleResetPassword
+    const handleResetPassword=(email)=>{
+      emailResetPassword(email)
+      .then(()=>{
+      toast.success('Forget successful please check your email',{autoClose: 500})
+      })
+      .catch(error =>{
+       console.log(error);
+       setError(error.message)
       })
     }
 
@@ -74,6 +97,7 @@ const Login = () => {
         <Form.Label>Password</Form.Label>
         <Form.Control type="password" name='password' placeholder="Password" required/>
       </Form.Group>
+      <p><Link onClick={handleResetPassword} className='text-warning'>Forget Password</Link></p>
       <p className='text-danger'>{error}</p>
       <Button className='w-50 fw-bold'  variant="primary" type="submit">
         Log In
