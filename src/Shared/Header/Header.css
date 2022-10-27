@@ -1,3 +1,6 @@
+#main-navigation{
+    background: transparent;
+}
 .navbar-container{
     text-decoration: none;
     font-size:20px;
@@ -24,6 +27,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+#light{
+    background-color: #f3ebf6;
+}
+#dark{
+    background-color:#46045e;
 }
 #light .switch label{
     color: white;

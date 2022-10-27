@@ -7,29 +7,30 @@ import { Link } from 'react-router-dom';
 import {AuthContext} from '../../Contexts/AuthProvider';
 import './Header.css'
 import {  FaUser } from 'react-icons/fa';
-import { Image, Tooltip } from 'react-bootstrap';
+import { Image  } from 'react-bootstrap';
 import { useState } from 'react';
 import ReactSwitch from 'react-switch';
-
+import {  toast } from 'react-toastify';
+ 
 const Header = () => {
    const [theme,setTheme]=useState(null)
     const {user,logOut}=useContext(AuthContext)
     const handleUserLogOut=()=>{
       logOut()
       .then(()=>{
-
+       toast.success('Sign Out successfully',{autoClose: 500})
       })
       .catch(error =>{
         console.log(error);
       })
     }
-
+ 
     const toggleTheme=()=>{
       setTheme((curr)=>(curr === "light" ? "dark" : "light"))
     }
     return (
-        <div>
-            <Navbar bg="light"  expand="lg" className='py-3'>
+        <div id={theme}>
+            <Navbar id='main-navigation'  bg="light" expand="lg" className='py-3'>
       <Container fluid>
         <Link className='navbar-container' to='/'>MaxCoach </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />

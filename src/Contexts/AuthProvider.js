@@ -37,11 +37,13 @@ const AuthProvider = ({children}) => {
  
     const googleProvider= new GoogleAuthProvider()
     const googleAuth=()=>{
+        setLoadding(true)
         return signInWithPopup(auth,googleProvider)
     }
 
     const gitHubProvider= new GithubAuthProvider();
     const gitHubAuth=()=>{
+        setLoadding(true)
         return signInWithPopup(auth,gitHubProvider)
     }
 

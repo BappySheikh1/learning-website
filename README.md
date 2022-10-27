@@ -1,9 +1,9 @@
-# LearnPLUS Repository
+# MaxCoach Repository
 Learn React JavaScript HTML CSS Full Stack special Tutorial on our website!
 This Site Is Educational Platfrom!
 
 ## Live Link
-Hosted in Firebas -> [MaxCoach](https://learning-website-client-f3d12.firebaseapp.com/)
+Hosted in Firebase -> [MaxCoach](https://learning-website-client-f3d12.firebaseapp.com/)
 
 ## Authentication 
 Firebase Authentication ->[Link](https://firebase.google.com/?gclid=CMjz_6LY_voCFQ52jgodZVUEqQ&gclsrc=ds) 
@@ -26,3 +26,4 @@ React Icon ->[Link](https://react-icons.github.io/react-icons/)
 Lottie-react Animation image ->[Link](https://lottiefiles.com/) 
 react switch ->[Link](https://www.npmjs.com/package/react-switch)
 react pdf package ->[Link](https://react-pdf.org/)
+react toastify ->[Link](https://www.npmjs.com/package/react-toastify)

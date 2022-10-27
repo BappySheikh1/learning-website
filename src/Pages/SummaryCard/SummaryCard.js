@@ -8,11 +8,12 @@ import { Col, Container, Row } from 'react-bootstrap';
 import LeftSideNav from '../../Shared/LeftSideNav/LeftSideNav';
 
 
+
 const SummaryCard = ({ct}) => {
     // console.log(ct);
     const {title,description,image,id,author,rating}=ct
     return (
-        <div>
+        <div> 
           <Container>
             <Row>
               <Col lg='9'>
@@ -66,8 +67,12 @@ const SummaryCard = ({ct}) => {
             <Col className='d-none d-lg-block' lg='3'>
               <LeftSideNav />
             </Col>
-            </Row>
+            </Row> 
             </Container>
+            {/* pdf download */}
+            <div>
+              
+            </div>
         </div>
     );
 };
