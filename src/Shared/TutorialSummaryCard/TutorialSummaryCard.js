@@ -9,7 +9,7 @@ const TutorialSummaryCard = ({allTutorial}) => {
     // console.log(allTutorial);
     return (
         <div>
-       <Card className=" mt-2 mx-auto ">
+       <Card className=" my-2 mx-auto ">
       <Card.Header className='d-flex justify-content-between align-items-center'>
         <div className='d-flex align-items-center'>
         <div>

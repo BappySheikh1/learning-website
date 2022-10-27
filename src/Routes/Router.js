@@ -54,7 +54,8 @@ export const router =createBrowserRouter([
                 element: <LeftSideNavDetails />
             },
             {
-                path:'/checkout', 
+                path:'/checkout/:id', 
+                loader:({params})=> fetch(`https://learning-website-server-bappysheikh1.vercel.app/tutorial/${params.id}`),
                 element: <PrivateRoute> <CheckOut /></PrivateRoute>
             }
         ]

@@ -9,6 +9,7 @@ import LeftSideNav from '../../Shared/LeftSideNav/LeftSideNav';
 
 
 
+
 const SummaryCard = ({ct}) => {
     // console.log(ct);
     const {title,description,image,id,author,rating}=ct
@@ -48,10 +49,10 @@ const SummaryCard = ({ct}) => {
         <div className='d-flex justify-content-between'>
         <Link to='/courses'><Button variant="primary">Go To Courses</Button></Link>
         <br />
-        <Link to='/checkout'><Button variant="primary" className='btn btn-outline-light '>Get premium access  <FaCrown className='text-warning ' /></Button></Link>
+        <Link to={`/checkout/${id}`}><Button variant="primary" className='btn btn-outline-light '>Get premium access  <FaCrown className='text-warning ' /></Button></Link>
         </div>
       </Card.Body>
-
+  
       <Card.Footer className="d-flex justify-content-between px-5 p-3"> 
         <div>
         <FaStar  className='icons-react text-warning'/>
@@ -69,7 +70,8 @@ const SummaryCard = ({ct}) => {
             </Col>
             </Row> 
             </Container>
-            {/* pdf download */}
+            
+            {/* */}
             <div>
               
             </div>

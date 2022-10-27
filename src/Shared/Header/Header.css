@@ -40,3 +40,11 @@
 #dark .switch label{
     color: black;
 }
+/* footer container */
+.footer-container{
+  margin: 0;
+  padding-top: 100px;
+  height: 200px;
+  background-color: black;
+  color: #f3ebf6;
+}
