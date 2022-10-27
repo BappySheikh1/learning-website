@@ -9,9 +9,10 @@ import { useState } from 'react';
 import './Login.css'
 import { toast } from 'react-toastify';
 
- 
+  
 const Login = () => {
   const[error,setError]=useState('')
+  const [userEmail,setUserEmail]=useState('')
   const navigate=useNavigate()
   const location=useLocation()
   let from = location?.state?.from?.pathname || "/";
@@ -68,12 +69,13 @@ const Login = () => {
     }
    
     // emailforget
-    const handleOnBlur=()=>{
-      
+    const handleEmailOnBlur=(event)=>{
+      const email=event.target.value
+      setUserEmail(email)
     }
     // handleResetPassword
-    const handleResetPassword=(email)=>{
-      emailResetPassword(email)
+    const handleResetPassword=()=>{
+      emailResetPassword(userEmail)
       .then(()=>{
       toast.success('Forget successful please check your email',{autoClose: 500})
       })
@@ -90,7 +92,7 @@ const Login = () => {
              <Form onSubmit={handleSubmit} className='w-75'>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" name='email' placeholder="Enter email" required />
+        <Form.Control type="email" onBlur={handleEmailOnBlur} name='email' placeholder="Enter email" required />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
