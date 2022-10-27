@@ -21,12 +21,12 @@ const Register = () => {
         const email=form.email.value
         const password=form.password.value
        console.log( name,photoURL,email,password);
-       
+
+      //  password validation start
        if (!/(?=.{8,})/.test(password)) {
         setError("password must be 8 character");
         return;
       }
-  
       if (!/(?=.*[a-zA-Z])/.test(password)) {
         setError("password should have Upper letter!!");
         return;
@@ -35,8 +35,8 @@ const Register = () => {
         setError("password should have special character!!");
         return;
       }
-  
-
+      setError('')
+    // password validation end
        createUser(email,password)
        .then(result =>{
         const user =result.user

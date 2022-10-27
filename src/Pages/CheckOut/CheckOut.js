@@ -1,7 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { Image } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import { FaDownload,FaCartPlus, FaStar, FaEye ,FaCrown} from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
@@ -10,7 +10,7 @@ import './CheckOut.css'
 
 const CheckOut = () => {
     const {user}=useContext(AuthContext);
-    const {title,description,image,id,author,rating}=useLoaderData()
+    const {title,description,image,category_id,author,rating}=useLoaderData()
     
     return (
         <div>
@@ -53,7 +53,11 @@ const CheckOut = () => {
         description
        }
         </Card.Text>
-        
+        <div className='d-flex justify-content-between'>
+        <Link to={`/category/${category_id}`}><Button variant="primary">Go To Courses</Button></Link>
+        <br />
+        <Link><Button variant="primary" className='btn btn-outline-light '>Click Me<FaCrown className='text-warning ' /></Button></Link>
+        </div>
       </Card.Body>
   
       <Card.Footer className="d-flex justify-content-between px-5 p-3"> 

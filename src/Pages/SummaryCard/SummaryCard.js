@@ -7,18 +7,24 @@ import { FaDownload,FaCartPlus, FaStar, FaEye ,FaCrown} from 'react-icons/fa';
 import { Col, Container, Row } from 'react-bootstrap';
 import LeftSideNav from '../../Shared/LeftSideNav/LeftSideNav';
 
+import Pdf from "react-to-pdf";
 
-
+const ref = React.createRef();
 
 const SummaryCard = ({ct}) => {
     // console.log(ct);
     const {title,description,image,id,author,rating}=ct
     return (
         <div> 
+          <div className="style">
+      <Pdf targetRef={ref} filename="code-example.pdf">
+        {({ toPdf }) => <button variant='dark' className='btn btn-outline-info text-warning fw-semibold mt-1' onClick={toPdf}>Generate Pdf <FaDownload /></button>}
+      </Pdf>
+      </div>
           <Container>
             <Row>
               <Col lg='9'>
-            <Card id='cartSummaryDetails' className="mx-auto my-4 ">
+            <Card ref={ref} id='cartSummaryDetails' className="mx-auto my-4 ">
       <Card.Header className='d-flex justify-content-between align-items-center'>
         <div className='d-flex align-items-center'>
           <div>
