@@ -2,7 +2,7 @@ import React from 'react';
 import './Blog.css'
 
 const Blog = () => {
-    return (
+    return ( 
         <div>
             <div className='bg-dark text-light my-3'>
                 <div className='w-50 mx-auto p-3 color-change'>

@@ -12,7 +12,7 @@ const Register = () => {
   const [accepted, setAccepted]=useState(false);
   const [error,setError]=useState('');
   const {createUser,updateUserProfile,emailvarify}=useContext(AuthContext)
-  
+   
     const handleSubmit=(event)=>{
         event.preventDefault();
         const form=event.target
@@ -82,8 +82,11 @@ const Register = () => {
   }
 
     return (
-      <div className='register-main '>
+      <div className='register-main text-light fw-semibold'>
         <div id='register-container'  className=' border p-4  mt-5 rounded'>
+          <div className='text-center my-3'>
+            <h3 className='fw-bold'>Resigner Now!</h3>
+          </div>
             <Form onSubmit={handleSubmit} className='w-75'>
       <Form.Group className="mb-3" controlId="formBasicName">
         <Form.Label>Email address</Form.Label>

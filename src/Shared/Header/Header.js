@@ -23,23 +23,23 @@ const Header = () => {
       .catch(error =>{
         console.log(error);
       })
-    }
+    } 
  
     const toggleTheme=()=>{
       setTheme((curr)=>(curr === "light" ? "dark" : "light"))
     }
     return (
         <div id={theme}>
-            <Navbar id='main-navigation'  bg="light" expand="lg" className='py-3'>
+            <Navbar id='main-navigation' expand="lg" className='py-3'>
       <Container fluid>
-        <Link className='navbar-container' to='/'>MaxCoach </Link>
+        <Link className='navbar-container text-light' to='/'>MaxCoach </Link>
         <Navbar.Toggle aria-controls="navbarScroll" />
 
        
 
         <Navbar.Collapse id="navbarScroll">
         <span className='ms-5 react-switch'>
-          <label>{theme === "light" ? "Light Mode" : "Dark Mode"}</label>
+          <label className='text-light'>{theme === "light" ? "Light Mode" : "Dark Mode"}</label>
           <ReactSwitch onChange={toggleTheme} checked={theme === "dark" }/>
           </span>
           <Nav

@@ -1,5 +1,5 @@
 #main-navigation{
-    background: transparent;
+    background: #264653;
 }
 .navbar-container{
     text-decoration: none;
@@ -15,7 +15,7 @@
  text-decoration: none;
  margin-right: 10px;
  font-size: 17px;
- color: black;
+ color: white;
  font-weight: 400;
  padding-right: 10px;
 }

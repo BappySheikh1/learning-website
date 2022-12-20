@@ -89,6 +89,9 @@ const Login = () => {
       <div className='login-main'>
         
         <div id='login-content' className=' border  p-4 mt-5 rounded'>
+        <div className='text-center my-3'>
+            <h3 className='fw-bold'>Log In!</h3>
+          </div>
              <Form onSubmit={handleSubmit} className='w-75'>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>

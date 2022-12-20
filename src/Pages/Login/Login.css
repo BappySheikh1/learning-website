@@ -4,11 +4,11 @@
     justify-content: space-around;
     align-items: center;
     height: 850px;
-    background-color: rgb(223, 195, 250);
+    background-color: #bbd0ff;
  }
  #login-content{
     width: 40%;
-    background-color: rgb(150, 72, 228);
+    background-color: #2f3e46;
     color: white;
  }
  /* Log in css end */
@@ -23,7 +23,7 @@
  }
  #register-container{
     width: 40%;
-    background-color:  rgb(17, 224, 17);
+    background-color: #2f3e46;
     
  }
  .details-content h3 {
@@ -60,7 +60,7 @@
     }
     #register-container{
         width: 80%;
-        background-color:  rgb(17, 224, 17);
+        background-color: #2f3e46;
         margin-bottom: 40px;
      }
  }
